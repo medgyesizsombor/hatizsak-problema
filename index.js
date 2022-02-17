@@ -10,7 +10,7 @@ let mushrooms = [
 ];
 
 /**
- * check if mushroom has csiperke, true if yes
+ * check if there is csiperke in mushrooms, true if yes
  * @param mushrooms
  */
 const includeCsiperke = (mushrooms) => {
@@ -103,6 +103,9 @@ const solve = (numbersOfMushrooms, capacity, mushrooms) => {
   if (numbersOfMushrooms !== mushrooms.length) {
     return;
   }
+  
+  giveIndexToTheMushrooms(mushrooms);
+  console.log(mushrooms)
 
   let result = [];
   let max = 0;
@@ -145,7 +148,6 @@ const solve = (numbersOfMushrooms, capacity, mushrooms) => {
 };
 
 console.time("Execution time");
-giveIndexToTheMushrooms(mushrooms);
 let res = solve(numbersOfMushrooms, capacity, mushrooms);
 
 console.log(res.result.length + " " + res.max);
